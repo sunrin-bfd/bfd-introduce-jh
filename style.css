@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Pretendard&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pretendard', sans-serif;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  background: linear-gradient(120deg, #dbeafe, #f0f9ff);
+  color: #333;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+}
+
+.hero span {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.special {
+  animation: fadeUp 4.4s ease;
+  font-size: 1.3rem;
+}
+
+.profile {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.typing {
+  font-size: 3rem;
+  width: 6.3em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #333;
+  margin: 0 auto 10px;
+  animation: typing 2s steps(7) forwards, blink 0.7s infinite;
+  max-width: 100%;
+  display: block;
+}
+
+.card {
+  background: #fff;
+  width: 85%;
+  max-width: 720px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  animation: fadeUp 5.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card h2 {
+  margin-bottom: 15px;
+}
+
+.list {
+  list-style: none;
+}
+
+.list li {
+  padding: 8px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+  font-size: 14px;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 6.3em
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.silver {
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+.gold {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-item span {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 60px 20px 40px;
+  }
+
+  .typing {
+    font-size: 2rem !important;
+    width: 6.3em;
+  }
+
+  .profile {
+    width: 120px;
+    height: 120px;
+  }
+
+  .card {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .card p {
+    font-size: 14.5px;
+    letter-spacing: -0.5px;
+    word-break: keep-all;
+  }
+}
+
+@media (hover: hover) {
+  .contact-item span:hover {
+    color: #2563eb;
+    font-weight: 700;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.card:active {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}

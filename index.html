@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta charset="UTF-8">
+  <title>성제훈 자기소개 페이지</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<script>
+  function copyText(text, textSpan) {
+    var originalText = textSpan.innerText;
+
+    function success() {
+      textSpan.innerText = "복사완료!";
+      textSpan.style.color = "#22c55e"; // 초록색 유지
+      textSpan.style.fontWeight = "bold";
+
+      setTimeout(function () {
+        textSpan.innerText = originalText;
+        // 특정 색상을 지정하는 대신, 빈 값을 넣어 CSS 설정으로 돌아가게 합니다.
+        textSpan.style.color = "";
+        textSpan.style.fontWeight = "";
+      }, 2000);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(success).catch(err => {
+        fallbackCopy(text, success);
+      });
+    } else {
+      fallbackCopy(text, success);
+    }
+
+    function fallbackCopy(text, cb) {
+      var textArea = document.createElement("textarea");
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      cb();
+    }
+  }
+</script>
+
+<body>
+  <header class="hero">
+    <img src="jehoon.jpg" alt="프로필 사진" class="profile">
+    <h1 class="typing">안녕하세요!!</h1>
+    <p class="special"><strong>BFD 부원</strong><span> 성제훈</span> 입니다!</p>
+  </header>
+
+  <section class="card">
+    <h2>🙋‍♂️ About Me</h2>
+    <p>
+      인천광역시 서구 인천이음중학교 졸업 👨‍🎓<br>
+      서울시 용산구 선린인터넷고등학교 재학중 🏫<br>
+      생년월일: 2010.03.12 🎂
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>🏆 Awards</h2>
+    <ul class="list">
+      <li><strong>📘 1학기</strong></li>
+      <li> 없음</span></li>
+      <br>
+      <li><strong>📗 2학기</strong></li>
+      <li>없음</span></li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>📞 Contact</h2>
+    <div class="contact-item">
+      <span onclick="copyText('wpgns312@gmail.com', this)">Email : wpgns312@gmail.com</span>
+    </div>
+    <div class="contact-item">
+      <span onclick="copyText('010-8460-4635', this)">Tel : 010-8460-4635</span>
+    </div>
+    <div class="contact-item">
+      <span onclick="copyText('@tjdwp9ns', this)">Insta : @tjdwp9ns</span>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 BFD All rights reserved
+  </footer>
+</body>
+
+</html>
